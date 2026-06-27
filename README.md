@@ -16,6 +16,12 @@ npm run dev      # http://localhost:3000
 npm run build    # production build
 ```
 
+## Deployment
+
+Deployed on Vercel from the `main` branch. See
+[`docs/deployment/vercel.md`](docs/deployment/vercel.md) for project settings and
+domain-wiring instructions. No environment variables or secrets are required.
+
 ## Project structure
 
 ```
