@@ -73,7 +73,7 @@ The intake control on the homepage is a **capture-only** affordance:
 
 ## 5. Call to action
 
-The single primary action is: **"Request a capability system demo."** It leads to a
+The single primary action is: **"Request a capability demo"** It leads to a
 demo request section, not to any account, checkout, or product flow.
 
 ## 6. Locked copy
@@ -83,7 +83,7 @@ update:
 
 - **Headline:** "The missing execution layer between AI intelligence and the real economy."
 - **Subhead:** "WEAI turns platform needs into governed, auditable, executable AI capability packages for real-world industries and human-facing services."
-- **Primary CTA:** "Request a capability system demo."
+- **Primary CTA:** "Request a capability demo"
 
 ## 7. Review checklist (apply before every change to public copy)
 

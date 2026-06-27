@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/*
+  WEAI.solutions design tokens.
+  Direction: clean trust (warm paper, refined serif display, generous space)
+  + industrial system clarity (mono labels, hairline rules, control-panel markers).
+*/
+@theme {
+  --color-paper: #f6f4ef;
+  --color-paper-raised: #fbfaf7;
+  --color-ink: #1a1916;
+  --color-ink-soft: #4a473f;
+  --color-ink-faint: #8c887d;
+  --color-line: #e4e0d6;
+  --color-line-strong: #cdc8ba;
+  --color-accent: #c2410c;
+  --color-accent-soft: #e8d9cf;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+    Georgia, Cambria, "Times New Roman", serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono",
+    "Menlo", Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Industrial section marker — a small mono label used across sections. */
+.system-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.display {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+}
+
+/* Faint engineering grid used as a backdrop accent. */
+.grid-backdrop {
+  background-image:
+    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
