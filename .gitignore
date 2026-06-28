@@ -24,6 +24,9 @@ yarn-error.log*
 .env
 .env*.local
 
+# vercel (project linkage / tokens — never commit)
+/.vercel/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
