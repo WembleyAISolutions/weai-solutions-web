@@ -28,6 +28,10 @@ export function Engagement() {
             </li>
           ))}
         </ol>
+
+        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink-faint">
+          {engagement.note}
+        </p>
       </div>
     </section>
   );

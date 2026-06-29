@@ -2,7 +2,7 @@ import { systemPath } from "@/content/landing";
 
 /**
  * Lightweight left-to-right system path: Platform Need → Governed Package →
- * Executable Workflow → Audit Record. A plain labelled sequence kept intentionally
+ * Operational Handoff → Audit Record. A plain labelled sequence kept intentionally
  * light — the heavier industrial flow is the separate DeliveryMap. Wraps gracefully
  * on narrow viewports.
  */
