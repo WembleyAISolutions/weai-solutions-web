@@ -36,9 +36,9 @@ export function CompactIntake() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-12 rounded-2xl border border-line bg-paper-raised p-5 sm:p-6"
+      className="card card-raised mt-12 p-5 sm:p-6"
     >
-      <p className="system-label">{compactIntake.label}</p>
+      <p className="eyebrow">{compactIntake.label}</p>
 
       <div className="mt-4 flex flex-col gap-3 sm:flex-row">
         <label htmlFor="compact-intake-text" className="sr-only">

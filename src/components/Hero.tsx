@@ -9,8 +9,8 @@ export function Hero() {
         aria-hidden
         className="grid-backdrop pointer-events-none absolute inset-0 opacity-60"
       />
-      <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-20 sm:pt-28">
-        <p className="system-label mb-6 flex items-center gap-3">
+      <div className="shell relative pb-20 pt-20 sm:pb-28 sm:pt-28">
+        <p className="eyebrow mb-7 flex items-center gap-3">
           <span
             aria-hidden
             className="inline-block h-1.5 w-1.5 rounded-full bg-accent"
@@ -18,11 +18,11 @@ export function Hero() {
           {hero.eyebrow}
         </p>
 
-        <h1 className="display max-w-4xl text-balance text-4xl font-semibold leading-[1.08] text-ink sm:text-6xl">
+        <h1 className="t-display max-w-4xl text-balance text-ink">
           {hero.headline}
         </h1>
 
-        <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-ink-soft sm:text-xl">
+        <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-ink-soft sm:text-xl">
           {hero.subhead}
         </p>
 

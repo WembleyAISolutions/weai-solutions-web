@@ -41,10 +41,10 @@ export function CapabilityIntake() {
   const hasInput = activeChips.length > 0 || text.trim().length > 0;
 
   return (
-    <section id="intake" className="border-b border-line bg-paper-raised">
-      <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-        <p className="system-label">{intake.sectionLabel}</p>
-        <h2 className="display mt-5 max-w-3xl text-balance text-3xl font-semibold leading-tight text-ink sm:text-4xl">
+    <section id="intake" className="border-b border-line bg-band">
+      <div className="shell section">
+        <p className="eyebrow">{intake.sectionLabel}</p>
+        <h2 className="t-h2 mt-5 max-w-3xl text-balance text-ink">
           {intake.title}
         </h2>
         <p className="mt-5 max-w-2xl text-pretty leading-relaxed text-ink-soft">

@@ -2,9 +2,10 @@
  * Centralized landing copy for the WEAI.solutions public homepage.
  *
  * This file is the single source of truth for on-page strings. All claims here
- * are governed by `docs/guardrails/landing-claims-policy.md`. Do not introduce
- * pricing, login, runtime/execution claims, or attribution that conflicts with
- * that policy. Locked strings are marked LOCKED and must not be reworded.
+ * are governed by `docs/guardrails/landing-claims-policy.md` — including the
+ * public-safe vocabulary and product-line discipline in §9. Do not introduce
+ * pricing, login, runtime/API, marketplace, or chatbot framing, and never expose
+ * internal trust-core or architecture terms. Locked strings are marked LOCKED.
  */
 
 export const site = {
@@ -19,11 +20,13 @@ export const hero = {
   /** LOCKED — see landing-claims-policy.md §6 */
   headline:
     "The missing execution layer between AI intelligence and the real economy.",
-  /** LOCKED — see landing-claims-policy.md §6 */
+  /** LOCKED (commercial) — see landing-claims-policy.md §6 */
   subhead:
-    "WEAI turns platform needs into governed, auditable, executable AI capability packages for real-world industries and human-facing services.",
-  /** Primary CTA label */
-  ctaPrimary: "Request a capability demo",
+    "WEAI helps organizations turn real workflows into governed AI capability " +
+    "packages — scoped, auditable, and ready for the owning team or platform to " +
+    "operate.",
+  /** Primary CTA — site-wide. */
+  ctaPrimary: "Start a capability assessment",
   ctaSecondary: "See the method",
 } as const;
 
@@ -36,26 +39,27 @@ export const systemPath = {
   steps: [
     { id: "need", label: "Platform Need" },
     { id: "package", label: "Governed Package" },
-    { id: "workflow", label: "Executable Workflow" },
+    { id: "handoff", label: "Operational Handoff" },
     { id: "audit", label: "Audit Record" },
   ],
 } as const;
 
 /**
- * Compact capability-intake entry placed on the first screen. Capture-only, same
- * rules as the full intake (policy §4): chips + free text, hands intent to the
- * demo request section. No processing, no network.
+ * Compact capability-intake entry placed on the first screen. Capture-only (policy
+ * §4): chips + free text, hands intent to the assessment/demo section. No
+ * processing, no network, no automated AI response.
  */
 export const compactIntake = {
-  label: "Capability intake",
-  placeholder: "Describe a workflow you need to make governed and executable…",
-  chips: ["Automate a regulated workflow", "Make an AI decision auditable"],
-  submitLabel: "Start a demo request",
+  label: "Start with one workflow",
+  placeholder:
+    "Describe the workflow you want to make AI-ready, auditable, or easier to operate…",
+  chips: ["Assess a workflow for AI", "Make a decision process auditable"],
+  submitLabel: "Start a capability assessment",
 } as const;
 
 /**
- * The "execution layer" explainer — framed as industrial system clarity.
- * Describes WEAI's own method. Makes no claim about operating third-party runtimes.
+ * 01 — The execution layer. WEAI's thesis. No claim about operating third-party
+ * runtimes.
  */
 export const layer = {
   sectionLabel: "01 / The execution layer",
@@ -91,75 +95,181 @@ export const layer = {
 } as const;
 
 /**
- * "How a need becomes a package" — describes WEAI's design method.
- * No runtime claims; this is process, not live execution.
+ * 02 — Why companies come to WEAI. Answers "why would I hire WEAI?" (PR3.1 §B-2).
  */
-export const method = {
-  sectionLabel: "02 / From need to package",
-  title: "A platform need becomes a capability package.",
-  steps: [
+export const whyWEAI = {
+  sectionLabel: "02 / Why companies come to WEAI",
+  title: "Why companies come to WEAI.",
+  intro:
+    "You don't need another model. You need a real workflow turned into something " +
+    "your organization can safely operate, own, and audit.",
+  cards: [
     {
-      n: "1",
-      title: "Capture the need",
+      id: "ai-ready",
+      label: "Make a workflow AI-ready",
       text:
-        "Start from a real platform or operational need, stated in the language of " +
-        "the business that has it.",
+        "You have a real business process, but it is too risky or undefined to " +
+        "automate directly.",
     },
     {
-      n: "2",
-      title: "Define governance",
+      id: "boundary",
+      label: "Define the boundary",
       text:
-        "Scope, controls, and accountability are fixed up front so the package is " +
-        "defensible from day one.",
+        "WEAI helps define what the capability may do, what it must not do, who owns " +
+        "the outcome, and what evidence is needed.",
     },
     {
-      n: "3",
-      title: "Package the capability",
+      id: "package",
+      label: "Package the capability",
       text:
-        "Intelligence is composed into an auditable, executable package shaped for " +
-        "the target industry.",
+        "The workflow is shaped into a governed package with scope, acceptance " +
+        "criteria, and handoff requirements.",
     },
     {
-      n: "4",
-      title: "Hand to operations",
+      id: "inspectable",
+      label: "Keep it inspectable",
       text:
-        "The package is designed to be adopted and run by the organization that " +
-        "owns the work.",
+        "The capability leaves records that can be reviewed, improved, and governed " +
+        "over time.",
     },
   ],
 } as const;
 
 /**
- * Reference surfaces. Per policy §3 these are illustrative real-world DOMAINS
- * only — never claimed as WEAI-built, -owned, -dependent, or -executed.
- * DryCleanOne and TaxEnd are stronger reference surfaces; the rest are emerging.
+ * 03 — What WEAI delivers. Productizes the service without exposing architecture
+ * (PR3.1 §B-3).
+ */
+export const delivers = {
+  sectionLabel: "03 / What WEAI delivers",
+  title: "What WEAI delivers.",
+  hook:
+    "A capability package is not a chatbot, a prompt, or a slide deck. It is a " +
+    "governed service package that defines:",
+  items: [
+    { id: "workflow", text: "The workflow being addressed" },
+    { id: "scope", text: "What the AI capability may and may not do" },
+    { id: "owner", text: "The human owner responsible for the outcome" },
+    { id: "acceptance", text: "The acceptance criteria" },
+    { id: "evidence", text: "The audit evidence" },
+    { id: "handoff", text: "The handoff path to operations" },
+  ],
+} as const;
+
+/**
+ * 04 — Delivery map. WEAI's engineer → govern → deliver process. Public-safe stage
+ * wording only (policy §8); no internal component/architecture names. "Governance
+ * Boundary" is a stage marker, not a system reveal. "Auditable Operation" is run by
+ * the owning platform, not a WEAI runtime. Anchor: #method.
+ */
+export const deliveryMap = {
+  sectionLabel: "04 / Delivery map",
+  title: "How a capability is engineered, governed, and delivered.",
+  caption:
+    "One pass from a stated need to an operation the owning organization can run and " +
+    "audit. WEAI engineers and governs the package; the platform owner operates it.",
+  stages: [
+    {
+      id: "intake",
+      label: "Need Intake",
+      caption: "We identify one real workflow and the business owner responsible for it.",
+    },
+    {
+      id: "design",
+      label: "Capability Design",
+      caption:
+        "We define what the capability should do, what it must not do, and how " +
+        "success is accepted.",
+    },
+    {
+      id: "boundary",
+      label: "Governance Boundary",
+      caption:
+        "Scope, authority, human responsibility, and audit requirements are fixed " +
+        "before build.",
+    },
+    {
+      id: "package",
+      label: "Production Package",
+      caption:
+        "The capability is packaged with operating logic, evidence requirements, and " +
+        "handoff instructions.",
+    },
+    {
+      id: "handoff",
+      label: "Platform Handoff",
+      caption: "The owning team or platform receives the package for operation.",
+    },
+    {
+      id: "operation",
+      label: "Auditable Operation",
+      caption: "The workflow can be run with records that remain inspectable.",
+    },
+  ],
+} as const;
+
+/**
+ * 05 — Reference surfaces. Per policy §3 these are independent operational DOMAINS
+ * only — never claimed as WEAI-built, -owned, -dependent, or -executed. DryCleanOne
+ * and TaxEnd are full evidence cards; the rest are emerging. Each full card carries
+ * one "What WEAI packages" row (policy §3) connecting the surface to WEAI's
+ * deliverable without claiming WEAI built or operates the business.
  */
 export const references = {
-  sectionLabel: "03 / Reference surfaces",
+  sectionLabel: "05 / Reference surfaces",
   title: "The kinds of real-world surfaces this work targets.",
   disclaimer:
-    "Reference surfaces are illustrative real-world domains shown to convey the type " +
+    "Reference surfaces are independent operational domains shown to convey the type " +
     "of execution problem WEAI addresses. They are not claimed as WEAI-built, " +
     "WEAI-operated, or running on any WEAI runtime.",
+  strongerLabel: "Operational reference surfaces",
+  packagesLabel: "What WEAI packages",
   stronger: [
     {
       id: "drycleanone",
       name: "DryCleanOne",
+      tag: "Reference surface",
       domain: "Operations · service logistics",
       text:
-        "A physical service workflow involving customer order tracking, store " +
+        "A physical service workflow spanning customer order tracking, store " +
         "operations, pricing, pickup, production, delivery, settlement, and audit.",
+      rows: [
+        { label: "Workflow", value: "Physical, human-facing service operation" },
+        {
+          label: "Order lifecycle",
+          value: "Tracking → production → pickup → delivery",
+        },
+        {
+          label: "Settlement",
+          value: "Ready status visible before payment; payment at pickup",
+        },
+        { label: "Audit", value: "Order and settlement records retained" },
+      ],
+      packages:
+        "A governed order-lifecycle capability that makes status, settlement, and " +
+        "audit records inspectable.",
     },
     {
       id: "taxend",
       name: "TaxEnd",
+      tag: "Reference surface",
       domain: "Compliance · financial services",
       text:
         "A regulated professional workflow where calculations, explanations, human " +
         "responsibility, and compliance boundaries must remain inspectable.",
+      rows: [
+        { label: "Surface", value: "Regulated calculation workflow" },
+        { label: "Explanation", value: "Results are explained, not opaque" },
+        { label: "Responsibility", value: "The human user remains accountable" },
+        { label: "Boundary", value: "Compliance limits stay inspectable" },
+      ],
+      packages:
+        "A governed calculation capability where explanations, boundaries, and " +
+        "responsibility remain inspectable.",
     },
   ],
-  emergingLabel: "Emerging domains",
+  emergingLabel: "Emerging capability domains",
+  emergingNote:
+    "Future export surfaces — early-stage, with no operational or maturity claims.",
   emerging: [
     { id: "storyone", name: "StoryOne", domain: "Emerging" },
     { id: "acapro", name: "ACAPRO", domain: "Emerging" },
@@ -168,56 +278,101 @@ export const references = {
 } as const;
 
 /**
- * Capability intake. Capture-only per policy §4: chips + free text. On submit it
- * populates / scrolls to the demo request section. No processing, routing, or
- * AI response is implied or performed.
+ * 06 — How an engagement works. The commercial process (PR3.1 §B-6): how a buyer
+ * works with WEAI, without revealing IP.
+ */
+export const engagement = {
+  sectionLabel: "06 / How an engagement works",
+  title: "How an engagement works.",
+  steps: [
+    {
+      n: "1",
+      title: "Capability assessment",
+      text:
+        "We review one workflow and determine whether it can become a governed AI " +
+        "capability.",
+    },
+    {
+      n: "2",
+      title: "Package design",
+      text:
+        "We define the boundary, acceptance criteria, human responsibility, and " +
+        "evidence needed.",
+    },
+    {
+      n: "3",
+      title: "Capability build",
+      text: "WEAI packages the capability for the operating context.",
+    },
+    {
+      n: "4",
+      title: "Handoff",
+      text:
+        "The owning team or platform receives the package and operating guidance.",
+    },
+    {
+      n: "5",
+      title: "Review",
+      text:
+        "The capability can be reviewed, improved, or extended as the workflow " +
+        "changes.",
+    },
+  ],
+} as const;
+
+/**
+ * 07 — Intake. Capture-only per policy §4: chips + free text. On submit it
+ * populates / scrolls to the assessment section. It starts a capability assessment
+ * conversation, NOT an automated AI response.
  */
 export const intake = {
-  sectionLabel: "04 / Capability intake",
-  title: "Describe the capability you need.",
+  sectionLabel: "07 / Start with one workflow",
+  title: "Start with one workflow.",
   helper:
-    "Pick a starting point or write your own. Nothing is sent or processed here — " +
-    "your description is carried straight into a demo request below.",
+    "Tell us about one workflow you want to make AI-ready, auditable, or easier to " +
+    "operate. This starts a capability assessment conversation, not an automated AI " +
+    "response.",
   placeholder:
-    "e.g. We need a governed way to automate intake triage across our service branches…",
+    "Describe the workflow you want to make AI-ready, auditable, or easier to operate…",
   chips: [
-    "Automate a regulated workflow",
-    "Govern an existing AI process",
-    "Make an AI decision auditable",
-    "Package a capability for operations",
+    "Assess a workflow for AI",
+    "Package a customer-facing service",
+    "Make a decision process auditable",
     "Reduce manual back-office work",
-    "Add controls to a customer-facing service",
+    "Prepare an AI capability for operations",
   ],
-  submitLabel: "Carry this into a demo request",
+  submitLabel: "Start a capability assessment",
   capturedLabel: "Captured intent",
 } as const;
 
 /**
- * Demo request section. Target of the primary CTA and the intake hand-off.
- * No account/login/checkout — this section only frames the request and shows the
- * captured intent. There is no backend submission in this scope.
+ * 08 — Capability assessment request. Target of the primary CTA and the intake
+ * hand-off. No account/login/checkout. There is no backend submission in this
+ * scope: intent is captured on-page only and is not transmitted or auto-answered.
  */
 export const demo = {
   id: "demo",
-  sectionLabel: "05 / Request a demo",
-  title: "Request a capability demo",
+  sectionLabel: "08 / Start a capability assessment",
+  title: "Start a capability assessment",
   body:
-    "Tell us the surface you want to make governed, auditable, and executable. " +
-    "A capability system demo is a working conversation about your specific need — " +
-    "not a product login.",
-  intentFieldLabel: "What you want to make executable",
+    "Tell us the workflow you want to make governed, auditable, and operable. A " +
+    "capability assessment is a working conversation about your specific workflow — " +
+    "not a product login and not an automated AI response.",
+  intentFieldLabel: "The workflow you want to make AI-ready",
   intentPlaceholder:
-    "Describe the capability or workflow you'd want a demo to address…",
+    "Describe the workflow or capability you'd want assessed…",
   contactNote:
-    "In this scope the homepage captures intent only and does not transmit it. " +
-    "A future release will connect this to a real intake channel.",
-  ctaLabel: "Request a capability demo",
+    "In this scope the homepage captures your request on this page only — nothing is " +
+    "transmitted and there is no automated AI response. It is a starting point you " +
+    "carry into a capability assessment conversation. As real follow-up channels are " +
+    "added, this wording will be updated to match.",
+  ctaLabel: "Start a capability assessment",
 } as const;
 
 export const footer = {
   tagline: "The execution layer between AI intelligence and the real economy.",
   legalNote:
-    "Reference surfaces named on this page are illustrative real-world domains and " +
+    "Reference surfaces named on this page are independent operational domains and " +
     "are not claimed as WEAI-built, WEAI-operated, or WEAI-executed.",
   copyright: "WEAI.solutions",
 } as const;
@@ -225,9 +380,9 @@ export const footer = {
 export const nav = {
   links: [
     { href: "#layer", label: "The layer" },
-    { href: "#method", label: "Method" },
+    { href: "#deliver", label: "What we deliver" },
     { href: "#references", label: "Surfaces" },
-    { href: "#intake", label: "Intake" },
+    { href: "#engagement", label: "Engagement" },
   ],
-  cta: "Request a demo",
+  cta: "Start a capability assessment",
 } as const;

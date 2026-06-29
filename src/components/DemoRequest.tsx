@@ -24,11 +24,9 @@ export function DemoRequest() {
 
   return (
     <section id={demo.id} className="border-b border-line">
-      <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
-        <p className="system-label">{demo.sectionLabel}</p>
-        <h2 className="display mt-5 text-balance text-3xl font-semibold leading-tight text-ink sm:text-4xl">
-          {demo.title}
-        </h2>
+      <div className="section mx-auto max-w-3xl px-6">
+        <p className="eyebrow">{demo.sectionLabel}</p>
+        <h2 className="t-h2 mt-5 text-balance text-ink">{demo.title}</h2>
         <p className="mt-6 text-pretty text-lg leading-relaxed text-ink-soft">
           {demo.body}
         </p>
