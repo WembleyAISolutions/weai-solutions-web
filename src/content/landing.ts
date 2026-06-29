@@ -12,7 +12,7 @@ export const site = {
   name: "WEAI",
   wordmark: "WEAI.solutions",
   /** Short system descriptor used in header/footer. */
-  systemLabel: "Execution Layer",
+  systemLabel: "Capability Systems",
 } as const;
 
 export const hero = {
@@ -46,7 +46,7 @@ export const systemPath = {
 
 /**
  * Compact capability-intake entry placed on the first screen. Capture-only (policy
- * §4): chips + free text, hands intent to the assessment/demo section. No
+ * §4): chips + free text, hands intent to the assessment section. No
  * processing, no network, no automated AI response.
  */
 export const compactIntake = {
@@ -58,17 +58,18 @@ export const compactIntake = {
 } as const;
 
 /**
- * 01 — The execution layer. WEAI's thesis. No claim about operating third-party
- * runtimes.
+ * 01 — Why WEAI exists. WEAI's thesis. No claim about operating third-party
+ * systems.
  */
 export const layer = {
-  sectionLabel: "01 / The execution layer",
+  sectionLabel: "01 / Why WEAI exists",
   title: "Between capable models and real-world outcomes sits a gap.",
   body:
-    "Modern models are capable. Turning that capability into work a regulated, " +
-    "operational business can actually adopt is a different problem. WEAI specializes " +
-    "in that translation — packaging intelligence into capability systems an " +
-    "organization can govern, audit, and run on its own terms.",
+    "Capable AI models do not automatically become safe, useful business operations. " +
+    "The hard part is turning intelligence into work that a regulated or operational " +
+    "business can actually adopt. WEAI specializes in that translation — packaging AI " +
+    "capability into governed systems that an organization can operate, audit, and " +
+    "improve on its own terms.",
   pillars: [
     {
       id: "governed",
@@ -85,11 +86,11 @@ export const layer = {
         "system can be reviewed rather than trusted blindly.",
     },
     {
-      id: "executable",
-      label: "Executable",
+      id: "operable",
+      label: "Operable",
       text:
-        "Packages are shaped to be adopted into real operations and human-facing " +
-        "services — not left as a demo or a slide.",
+        "Packages are shaped to be adopted and run by the owning team or platform — " +
+        "not left as a prototype or a slide.",
     },
   ],
 } as const;
@@ -219,8 +220,8 @@ export const references = {
   title: "The kinds of real-world surfaces this work targets.",
   disclaimer:
     "Reference surfaces are independent operational domains shown to convey the type " +
-    "of execution problem WEAI addresses. They are not claimed as WEAI-built, " +
-    "WEAI-operated, or running on any WEAI runtime.",
+    "of business workflow WEAI addresses. They are not claimed as WEAI-built, " +
+    "WEAI-operated, or running on a WEAI operating environment.",
   strongerLabel: "Operational reference surfaces",
   packagesLabel: "What WEAI packages",
   stronger: [
@@ -267,9 +268,10 @@ export const references = {
         "responsibility remain inspectable.",
     },
   ],
-  emergingLabel: "Emerging capability domains",
+  emergingLabel: "Emerging reference surfaces",
   emergingNote:
-    "Future export surfaces — early-stage, with no operational or maturity claims.",
+    "Emerging reference surfaces — early-stage independent domains, with no " +
+    "operational or maturity claims.",
   emerging: [
     { id: "storyone", name: "StoryOne", domain: "Emerging" },
     { id: "acapro", name: "ACAPRO", domain: "Emerging" },
@@ -301,7 +303,7 @@ export const engagement = {
     },
     {
       n: "3",
-      title: "Capability build",
+      title: "Package build",
       text: "WEAI packages the capability for the operating context.",
     },
     {
@@ -318,6 +320,13 @@ export const engagement = {
         "changes.",
     },
   ],
+  /**
+   * C3 supporting line (not a heading). Agent positioning kept conditional and
+   * subordinate: the responsible customer is always the owning platform/team.
+   */
+  note:
+    "Future-ready note: as agent-enabled platforms mature, capability usage still " +
+    "needs boundaries, inspectable records, and commercial measurement.",
 } as const;
 
 /**
@@ -364,22 +373,22 @@ export const demo = {
   contactNote:
     "In this scope the homepage captures your request on this page only — nothing is " +
     "transmitted and there is no automated AI response. It is a starting point you " +
-    "carry into a capability assessment conversation. As real follow-up channels are " +
-    "added, this wording will be updated to match.",
+    "carry into a capability assessment conversation.",
   ctaLabel: "Start a capability assessment",
 } as const;
 
 export const footer = {
-  tagline: "The execution layer between AI intelligence and the real economy.",
+  tagline: "Turning real workflows into governed AI capability packages.",
   legalNote:
     "Reference surfaces named on this page are independent operational domains and " +
-    "are not claimed as WEAI-built, WEAI-operated, or WEAI-executed.",
+    "are not claimed as WEAI-built, WEAI-operated, or running on a WEAI operating " +
+    "environment.",
   copyright: "WEAI.solutions",
 } as const;
 
 export const nav = {
   links: [
-    { href: "#layer", label: "The layer" },
+    { href: "#layer", label: "Why WEAI" },
     { href: "#deliver", label: "What we deliver" },
     { href: "#references", label: "Surfaces" },
     { href: "#engagement", label: "Engagement" },

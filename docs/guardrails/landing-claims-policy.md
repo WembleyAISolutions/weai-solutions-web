@@ -66,8 +66,10 @@ operational surface — e.g. DryCleanOne's order lifecycle and its public, obser
 detail that ready status is visible before payment with payment at pickup; TaxEnd's
 regulated-calculation, explanation, and user-responsibility boundary. These rows
 describe the surface itself and must not imply WEAI built, owns, depends on, or
-executes it. Emerging domains may be framed as *future export surfaces* but carry no
-operational or maturity claims.
+executes it. Emerging surfaces (StoryOne / ACAPRO / Longfellows) must be labelled as
+*emerging reference surfaces* — independent domains. Do **not** call them "capability
+domains" or any phrasing implying WEAI builds, owns, or produces them; that would
+break the reference-surface boundary. They carry no operational or maturity claims.
 
 **"What WEAI packages" row (permitted):** Each full evidence card may carry one row
 that states the capability WEAI would *package* for that surface (e.g. a governed
@@ -145,9 +147,14 @@ All public copy draws only from the approved vocabulary below. New copy is gover
 this section; nothing lives outside the policy.
 
 **Approved public-safe vocabulary (use these):** governance boundary · capability
-package · operating scope · human responsibility · acceptance criteria · audit
-evidence · handoff path · inspectable records · operating review · capability
-assessment.
+package · operational package · operating scope · operating surface · operating
+environment · operable · operationally adoptable · human responsibility · acceptance
+criteria · audit evidence · handoff path · inspectable records · operating review ·
+capability assessment.
+
+The word "executable"/"execution" is retired from public copy (the sole exception is
+the locked hero headline). Use "operable", "operational package", "operating surface",
+or "business workflow" instead.
 
 **Allowed public claims:** WEAI helps define governance boundaries; packages real
 workflows into capability packages; designs audit and handoff surfaces; works with
