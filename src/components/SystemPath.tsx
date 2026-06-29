@@ -2,13 +2,14 @@ import { systemPath } from "@/content/landing";
 
 /**
  * Lightweight left-to-right system path: Platform Need → Governed Package →
- * Executable Workflow → Audit Record. A plain labelled sequence, not an internal
- * architecture diagram. Wraps gracefully on narrow viewports.
+ * Executable Workflow → Audit Record. A plain labelled sequence kept intentionally
+ * light — the heavier industrial flow is the separate DeliveryMap. Wraps gracefully
+ * on narrow viewports.
  */
 export function SystemPath() {
   return (
-    <div className="mt-12">
-      <p className="system-label mb-4">{systemPath.label}</p>
+    <div className="mt-14 border-t border-line pt-8">
+      <p className="eyebrow mb-4">{systemPath.label}</p>
       <ol className="flex flex-wrap items-center gap-x-3 gap-y-3">
         {systemPath.steps.map((step, i) => (
           <li key={step.id} className="flex items-center gap-3">

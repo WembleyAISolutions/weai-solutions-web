@@ -27,7 +27,7 @@ export function SiteHeader() {
 
         <a
           href="#demo"
-          className="rounded-full border border-line-strong bg-ink px-4 py-2 text-sm font-medium text-paper transition-opacity hover:opacity-90"
+          className="hidden whitespace-nowrap rounded-full border border-line-strong bg-ink px-4 py-2 text-sm font-medium text-paper transition-opacity hover:opacity-90 sm:inline-flex"
         >
           {nav.cta}
         </a>
