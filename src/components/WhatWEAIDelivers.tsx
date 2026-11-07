@@ -1,4 +1,5 @@
 import { delivers } from "@/content/landing";
+import { DeliversList } from "./DeliversList";
 
 /**
  * 03 — "What WEAI delivers." Productizes the capability package without exposing
@@ -20,21 +21,7 @@ export function WhatWEAIDelivers() {
             </p>
           </div>
 
-          <ol className="card divide-y divide-line self-start overflow-hidden">
-            {delivers.items.map((item, i) => (
-              <li
-                key={item.id}
-                className="flex items-baseline gap-4 px-6 py-4"
-              >
-                <span className="font-mono text-xs text-ink-faint">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="text-pretty leading-relaxed text-ink">
-                  {item.text}
-                </span>
-              </li>
-            ))}
-          </ol>
+          <DeliversList items={delivers.items} />
         </div>
       </div>
     </section>

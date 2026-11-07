@@ -1,4 +1,5 @@
 import { layer } from "@/content/landing";
+import { PillarGrid } from "./PillarGrid";
 
 export function ExecutionLayer() {
   return (
@@ -12,19 +13,7 @@ export function ExecutionLayer() {
           {layer.body}
         </p>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
-          {layer.pillars.map((pillar, i) => (
-            <div key={pillar.id} className="bg-paper-raised p-7">
-              <div className="flex items-center justify-between">
-                <span className="t-h3 text-ink">{pillar.label}</span>
-                <span className="eyebrow">{String(i + 1).padStart(2, "0")}</span>
-              </div>
-              <p className="mt-4 text-pretty leading-relaxed text-ink-soft">
-                {pillar.text}
-              </p>
-            </div>
-          ))}
-        </div>
+        <PillarGrid pillars={layer.pillars} />
       </div>
     </section>
   );
