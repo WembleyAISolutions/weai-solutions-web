@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { LIMITS } from "@/content/contact";
 import { validateContact } from "@/lib/contact-validate";
 import { contactWebhookUrl } from "@/lib/contact-config";
+import { createRateLimiter } from "@/lib/rate-limit";
 
 /**
  * POST /api/contact — forwards one validated enquiry to the confirmed business
@@ -22,17 +23,8 @@ const RATE_WINDOW_MS = 10 * 60 * 1000;
 const RATE_MAX = 5;
 
 // Best-effort, per-instance rate limit (no shared store exists in this repo).
-const hits = new Map<string, number[]>();
-function rateLimited(key: string): boolean {
-  const now = Date.now();
-  const recent = (hits.get(key) ?? []).filter((t) => now - t < RATE_WINDOW_MS);
-  recent.push(now);
-  hits.set(key, recent);
-  if (hits.size > 5000) {
-    for (const [k, v] of hits) if (v.every((t) => now - t >= RATE_WINDOW_MS)) hits.delete(k);
-  }
-  return recent.length > RATE_MAX;
-}
+// Only allowed requests are recorded; the key map is capped at 1000 entries.
+const limiter = createRateLimiter({ windowMs: RATE_WINDOW_MS, max: RATE_MAX, maxKeys: 1000 });
 
 function clientKey(req: Request): string {
   const fwd = req.headers.get("x-forwarded-for");
@@ -48,7 +40,7 @@ export async function POST(req: Request) {
   const url = contactWebhookUrl();
   if (!url) return fail(503, "not_configured");
 
-  if (rateLimited(clientKey(req))) return fail(429, "rate_limited");
+  if (!limiter.allow(clientKey(req))) return fail(429, "rate_limited");
 
   const contentType = req.headers.get("content-type") ?? "";
   if (!contentType.toLowerCase().startsWith("application/json")) return fail(415, "invalid");
