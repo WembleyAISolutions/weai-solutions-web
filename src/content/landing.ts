@@ -386,12 +386,3 @@ export const footer = {
   copyright: "WEAI.solutions",
 } as const;
 
-export const nav = {
-  links: [
-    { href: "#layer", label: "Why WEAI" },
-    { href: "#deliver", label: "What we deliver" },
-    { href: "#references", label: "Surfaces" },
-    { href: "#engagement", label: "Engagement" },
-  ],
-  cta: "Start a capability assessment",
-} as const;
