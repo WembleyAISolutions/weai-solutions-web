@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ContactForm } from "@/components/ContactForm";
 import { contactCopy } from "@/content/contact";
 import { resolveAbout } from "@/lib/contact-validate";
+import { contactWebhookUrl } from "@/lib/contact-config";
 
 export const metadata: Metadata = {
   title: "Contact — WEAI.solutions",
@@ -19,20 +20,10 @@ function first(v: string | string[] | undefined): string | undefined {
   return Array.isArray(v) ? v[0] : v;
 }
 
-function formEnabled(): boolean {
-  const raw = process.env.CONTACT_WEBHOOK_URL?.trim();
-  if (!raw) return false;
-  try {
-    return new URL(raw).protocol === "https:";
-  } catch {
-    return false;
-  }
-}
-
 export default async function ContactPage({ searchParams }: { searchParams: Promise<Search> }) {
   const sp = await searchParams;
   const { about, area } = resolveAbout(first(sp.from), first(sp.product));
-  const enabled = formEnabled();
+  const enabled = Boolean(contactWebhookUrl());
 
   return (
     <>
