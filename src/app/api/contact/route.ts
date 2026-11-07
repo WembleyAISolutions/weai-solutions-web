@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { LIMITS } from "@/content/contact";
 import { validateContact } from "@/lib/contact-validate";
+import { contactWebhookUrl } from "@/lib/contact-config";
 
 /**
  * POST /api/contact — forwards one validated enquiry to the confirmed business
@@ -39,23 +40,12 @@ function clientKey(req: Request): string {
   return ip || "unknown";
 }
 
-function webhookUrl(): string | undefined {
-  const raw = process.env.CONTACT_WEBHOOK_URL?.trim();
-  if (!raw) return undefined;
-  try {
-    const u = new URL(raw);
-    return u.protocol === "https:" ? u.toString() : undefined;
-  } catch {
-    return undefined;
-  }
-}
-
 function fail(status: number, error: string, extra?: Record<string, unknown>) {
   return NextResponse.json({ delivered: false, error, ...extra }, { status, headers: { "cache-control": "no-store" } });
 }
 
 export async function POST(req: Request) {
-  const url = webhookUrl();
+  const url = contactWebhookUrl();
   if (!url) return fail(503, "not_configured");
 
   if (rateLimited(clientKey(req))) return fail(429, "rate_limited");

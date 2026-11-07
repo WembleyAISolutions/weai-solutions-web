@@ -3,6 +3,17 @@
 Public homepage for **WEAI.solutions** — the missing execution layer between AI
 intelligence and the real economy.
 
+## Site structure
+
+The public site has four lines — **Foundation · Ops · Workforce · Platforms** — plus
+**Contact**. This repository is the public facade only: product facts live as typed
+content records in `src/content/` (`products.ts`, `cases.ts`, `versioning.ts`) and
+pages import them rather than hard-coding product names, versions or statuses. An
+unconfirmed fact is omitted, never guessed. `/foundation` and `/contact` ship with
+WEB-NAV-001; Ops, Workforce and Platforms are forthcoming nav labels until their
+pages land. The contact form posts to `/api/contact`, which relays to the business
+inbox via `CONTACT_WEBHOOK_URL` (see `.env.example`); without it the form stays off.
+
 ## Stack
 
 - [Next.js](https://nextjs.org) 15 (App Router) · React 19 · TypeScript
@@ -20,7 +31,8 @@ npm run build    # production build
 
 Deployed on Vercel from the `main` branch. See
 [`docs/deployment/vercel.md`](docs/deployment/vercel.md) for project settings and
-domain-wiring instructions. No environment variables or secrets are required.
+domain-wiring instructions. The only environment variable is `CONTACT_WEBHOOK_URL`
+(Vercel only, see `.env.example`); the site builds and runs without it.
 
 ## Project structure
 
