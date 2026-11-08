@@ -15,7 +15,7 @@ export interface NavItem {
 export const NAV_ITEMS: readonly NavItem[] = [
   { id: "foundation", label: "Foundation", href: "/foundation" },
   { id: "ops", label: "Ops", href: "/ops" },
-  { id: "workforce", label: "Workforce" },
+  { id: "workforce", label: "Workforce", href: "/workforce" },
   { id: "payments", label: "Payments" },
   { id: "platforms", label: "Platforms" },
 ] as const;
@@ -25,7 +25,7 @@ export const NAV_CONTACT = { id: "contact", label: "Contact", href: "/contact" }
 export const FORTHCOMING_LABEL = "forthcoming";
 
 export const FORTHCOMING_NOTE =
-  "Workforce, Payments and Platforms pages are forthcoming.";
+  "Payments and Platforms pages are forthcoming.";
 
 export const GITHUB_ORG = {
   label: "GitHub",
