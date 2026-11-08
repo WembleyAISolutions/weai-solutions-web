@@ -52,21 +52,23 @@ function StationAndLink({
       {link ? (
         <li
           aria-label={`${link.label} — ${link.status}`}
-          className="flex flex-row items-center justify-center gap-2 px-2 lg:flex-col lg:px-3"
+          className="flex flex-col items-center justify-center gap-1 py-1 lg:gap-2 lg:px-3"
         >
           <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink-faint">
             {link.label}
           </span>
-          <span aria-hidden className="relative flex h-6 w-16 items-center lg:w-20">
+          {/* Mobile: vertical arrow pointing to the next station below. Desktop: horizontal. */}
+          <span aria-hidden className="relative flex h-10 w-6 items-center justify-center lg:h-6 lg:w-20">
             <span
               className={
-                "block h-0 w-full border-t-2 " +
+                "block h-full w-0 border-l-2 lg:h-0 lg:w-full lg:border-l-0 lg:border-t-2 " +
                 (link.status === "built" ? "border-accent" : "border-dashed border-line-strong")
               }
             />
             <span
               className={
-                "absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 translate-x-1/2 rotate-45 border-r-2 border-t-2 " +
+                "absolute bottom-0 left-1/2 h-2 w-2 -translate-x-1/2 translate-y-1/2 rotate-45 border-b-2 border-r-2 " +
+                "lg:bottom-auto lg:left-auto lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-1/2 lg:border-b-0 lg:border-t-2 " +
                 (link.status === "built" ? "border-accent" : "border-line-strong")
               }
             />

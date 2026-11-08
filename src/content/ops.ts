@@ -83,13 +83,13 @@ export const opsWorkflow = {
   title: "Ordered by weight above. Signals flow the other way — small to large.",
   body:
     "The blocks below are arranged by how much each one carries. The flow of a " +
-    "signal runs in the opposite direction: it arrives in a mailbox, is routed and " +
-    "supervised on the board, and is executed on the platform. DomainOps is not a " +
+    "signal is designed to run the opposite way: arriving in a mailbox, routed and " +
+    "supervised on the board, carried through on the platform. DomainOps is not a " +
     "station on that path — it is the precondition under all of it.",
   stations: [
-    { id: "mailops", label: "Intake · smallest unit", text: "A mailbox per agent turns incoming mail into a structured signal." },
-    { id: "opsboard", label: "Supervision", text: "The signal is routed, and the human decision points are recorded." },
-    { id: "costudio", label: "Platform · execution", text: "Work runs across agents and models; the result is reviewable." },
+    { id: "mailops", label: "Intake · smallest unit", text: "Designed so a mailbox per agent turns incoming mail into a structured signal." },
+    { id: "opsboard", label: "Supervision", text: "Designed so the signal is routed and the human decision points are recorded." },
+    { id: "costudio", label: "Platform", text: "Designed so work can continue across agents and models and the result stays reviewable." },
   ],
   /** Connection status between consecutive stations. `built` only when confirmed. */
   links: [
