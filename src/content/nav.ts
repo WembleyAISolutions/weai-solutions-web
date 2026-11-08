@@ -1,9 +1,9 @@
 /**
- * Site navigation (WEB-NAV-001). Top-level pages are Foundation · Ops · Workforce ·
- * Platforms plus the Contact button. Pages that have not shipped yet are rendered
+ * Site navigation (WEB-NAV-001/002). Top-level pages are Foundation · Ops · Workforce ·
+ * Payments · Platforms plus the Contact button. Pages that have not shipped yet are rendered
  * as forthcoming, non-link labels — never as placeholder routes.
  */
-export type PageId = "foundation" | "ops" | "workforce" | "platforms";
+export type PageId = "foundation" | "ops" | "workforce" | "payments" | "platforms";
 
 export interface NavItem {
   id: PageId;
@@ -14,8 +14,9 @@ export interface NavItem {
 
 export const NAV_ITEMS: readonly NavItem[] = [
   { id: "foundation", label: "Foundation", href: "/foundation" },
-  { id: "ops", label: "Ops" },
+  { id: "ops", label: "Ops", href: "/ops" },
   { id: "workforce", label: "Workforce" },
+  { id: "payments", label: "Payments" },
   { id: "platforms", label: "Platforms" },
 ] as const;
 
@@ -24,7 +25,7 @@ export const NAV_CONTACT = { id: "contact", label: "Contact", href: "/contact" }
 export const FORTHCOMING_LABEL = "forthcoming";
 
 export const FORTHCOMING_NOTE =
-  "Ops, Workforce and Platforms pages are forthcoming.";
+  "Workforce, Payments and Platforms pages are forthcoming.";
 
 export const GITHUB_ORG = {
   label: "GitHub",
@@ -36,9 +37,16 @@ export const PAGE_NAMES: Record<PageId, string> = {
   foundation: "Foundation",
   ops: "Ops",
   workforce: "Workforce",
+  payments: "Payments",
   platforms: "Platforms",
 };
 
 export function isPageId(value: string | undefined): value is PageId {
-  return value === "foundation" || value === "ops" || value === "workforce" || value === "platforms";
+  return (
+    value === "foundation" ||
+    value === "ops" ||
+    value === "workforce" ||
+    value === "payments" ||
+    value === "platforms"
+  );
 }
