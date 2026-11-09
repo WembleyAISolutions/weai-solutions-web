@@ -2,7 +2,7 @@
 
 /**
  * Compact capability-intake entry for the first screen — a light interaction
- * affordance. Capture-only per landing-claims-policy.md §4: chips + free text,
+ * affordance. Capture-only per docs/public-copy-rules.md: chips + free text,
  * hands the composed intent to the shared intake context (which scrolls to the
  * demo request section). No processing, no network calls. The full intake
  * section remains later on the page.

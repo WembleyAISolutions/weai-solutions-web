@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Capability intake — capture-only per landing-claims-policy.md §4.
+ * Capability intake — capture-only per docs/public-copy-rules.md.
  * Chips + free text. On submit it hands the text to the shared intake context,
  * which scrolls to the demo request section. No processing, routing, or AI
  * response is performed or implied. No network calls.

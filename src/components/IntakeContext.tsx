@@ -2,7 +2,7 @@
 
 /**
  * Client-only bridge between the Capability Intake control and the Demo Request
- * section. Per landing-claims-policy.md §4 this is capture-only: it holds the
+ * section. Per docs/public-copy-rules.md this is capture-only: it holds the
  * user's typed/selected intent in React state and scrolls to the demo section.
  * It performs NO network calls and implies NO processing of the input.
  */

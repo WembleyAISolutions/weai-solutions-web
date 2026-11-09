@@ -10,7 +10,7 @@
  * `purpose` is filled only where existing public copy supports it; otherwise it is
  * the empty string until confirmed (components omit an empty purpose).
  */
-export type Line = "foundation" | "ops" | "workforce" | "platforms";
+export type Line = "foundation" | "ops" | "workforce" | "payments" | "platforms";
 
 export interface Product {
   id: string;
@@ -24,16 +24,75 @@ export interface Product {
   worksNow: string[]; // empty when unknown
   nextMilestone?: string; // no invented dates
   links?: { product?: string; demo?: string; github?: string };
+  /** Real product screenshot under /public. Omitted until one exists — never a mock-up. */
+  screenshot?: { src: string; alt: string };
 }
 
 export const PRODUCTS: readonly Product[] = [
   // Foundation-level record — exists for the version badge only.
   { id: "security-shield", name: "Security Shield", line: "foundation", purpose: "", worksNow: [] },
 
-  // Ops
-  { id: "opsboard", name: "OpsBoard", line: "ops", purpose: "", worksNow: [] },
-  { id: "costudio", name: "CoStudio", line: "ops", purpose: "", worksNow: [] },
-  { id: "mailops", name: "MailOps", line: "ops", purpose: "", worksNow: [] },
+  // Ops — ordered by weight (WEB-NAV-002): CoStudio · DomainOps · OpsBoard · MailOps.
+  // Copy states the pain point and the direction, not the mechanism. No versions
+  // are confirmed; `worksNow` stays empty until the Owner confirms each item.
+  {
+    id: "costudio",
+    name: "CoStudio",
+    line: "ops",
+    purpose:
+      "The platform layer of Ops: designed as a router and connector between agents " +
+      "and between models, so a piece of work survives the switch from one to the next.",
+    intendedUser: "Teams running more than one agent, or one agent across more than one model.",
+    problem:
+      "Agents from the same vendor cannot talk to each other. Switching models loses " +
+      "context, invites hallucination, runs out of memory and drags conversations past " +
+      "their useful length. Projects stall in the gaps between tools.",
+    worksNow: [],
+  },
+  {
+    id: "domainops",
+    name: "DomainOps",
+    line: "ops",
+    purpose:
+      "The identity layer an agent needs before it goes live — domain, mailbox, DNS, " +
+      "certificates — designed so they can be chosen, bought, configured and migrated " +
+      "in one place.",
+    intendedUser: "Anyone putting an agent, a product or a company online.",
+    problem:
+      "Hundreds of suffixes; the obvious name is taken or priced for speculation; " +
+      "registrars bundle services nobody asked for and bill mailboxes per head. " +
+      "The right combination (weai.solutions + weai.au; StoryOne → .life) takes " +
+      "judgement most people do not have time for.",
+    worksNow: [],
+  },
+  {
+    id: "opsboard",
+    name: "OpsBoard",
+    line: "ops",
+    purpose:
+      "The supervision board: designed to put many owners, many agents and many " +
+      "projects on one surface, with the human decision points on record.",
+    intendedUser: "Owners and operators who need to see everything in flight without opening every tool.",
+    problem:
+      "Work spread across agents and projects has no single place where a person can " +
+      "see what is waiting on them, what has been decided, and what moved on without " +
+      "them.",
+    worksNow: [],
+  },
+  {
+    id: "mailops",
+    name: "MailOps",
+    line: "ops",
+    purpose:
+      "The smallest unit of signal: designed as one mailbox per agent, pulling from " +
+      "many sources and handing on a structured signal with its origin attached.",
+    intendedUser: "Any agent that has to read and act on email.",
+    problem:
+      "Email is still where most work arrives, and it arrives unstructured. An agent " +
+      "that reads it directly has no record of what came in, from where, or why it " +
+      "acted.",
+    worksNow: [],
+  },
 
   // Workforce
   { id: "hr-ar-os", name: "HR-AR OS", line: "workforce", purpose: "", worksNow: [] },

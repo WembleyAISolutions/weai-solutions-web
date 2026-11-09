@@ -40,7 +40,15 @@ export function resolveAbout(from?: string, product?: string): { about?: string;
   const p = getProduct(product);
   if (p) {
     const area: AreaId | undefined =
-      p.line === "ops" ? "ops" : p.line === "workforce" ? "workforce" : p.line === "platforms" ? "platforms" : "foundation";
+      p.line === "ops"
+        ? "ops"
+        : p.line === "workforce"
+          ? "workforce"
+          : p.line === "payments"
+            ? "payments"
+            : p.line === "platforms"
+              ? "platforms"
+              : "foundation";
     return { about: p.name, area };
   }
   if (isPageId(from)) return { about: PAGE_NAMES[from], area: from };

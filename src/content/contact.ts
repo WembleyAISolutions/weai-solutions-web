@@ -6,6 +6,7 @@ export const AREAS = [
   { id: "foundation", label: "Foundation" },
   { id: "ops", label: "Ops" },
   { id: "workforce", label: "Workforce / HR-AR OS" },
+  { id: "payments", label: "Payments" },
   { id: "platforms", label: "Platforms" },
   { id: "partnership", label: "Partnership or integration" },
   { id: "unsure", label: "Not sure yet" },

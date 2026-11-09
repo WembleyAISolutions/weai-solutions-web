@@ -2,7 +2,7 @@
 
 /**
  * Demo request section — target of the primary CTA and the intake hand-off.
- * Per landing-claims-policy.md §1/§4 there is NO account, login, checkout, or
+ * Per docs/public-copy-rules.md there is NO account, login, checkout, or
  * backend submission in this scope. The textarea mirrors the captured intent so
  * the visitor can carry it into a real demo conversation. The button is inert
  * beyond confirming capture: it makes no network call.

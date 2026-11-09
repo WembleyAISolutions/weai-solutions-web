@@ -2,7 +2,7 @@
  * Centralized landing copy for the WEAI.solutions public homepage.
  *
  * This file is the single source of truth for on-page strings. All claims here
- * are governed by `docs/guardrails/landing-claims-policy.md` — including the
+ * are governed by `docs/public-copy-rules.md` — including the
  * public-safe vocabulary and product-line discipline in §9. Do not introduce
  * pricing, login, runtime/API, marketplace, or chatbot framing, and never expose
  * internal trust-core or architecture terms. Locked strings are marked LOCKED.
@@ -17,10 +17,10 @@ export const site = {
 
 export const hero = {
   eyebrow: "AI capability systems for the real economy",
-  /** LOCKED — see landing-claims-policy.md §6 */
+  /** LOCKED — see docs/public-copy-rules.md */
   headline:
     "The missing execution layer between AI intelligence and the real economy.",
-  /** LOCKED (commercial) — see landing-claims-policy.md §6 */
+  /** LOCKED (commercial) — see docs/public-copy-rules.md */
   subhead:
     "WEAI helps organizations turn real workflows into governed AI capability " +
     "packages — scoped, auditable, and ready for the owning team or platform to " +
