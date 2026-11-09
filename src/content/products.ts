@@ -95,7 +95,18 @@ export const PRODUCTS: readonly Product[] = [
   },
 
   // Workforce
-  { id: "hr-ar-os", name: "HR-AR OS", line: "workforce", purpose: "", worksNow: [] },
+  {
+    id: "hr-ar-os",
+    name: "HR-AR OS",
+    line: "workforce",
+    purpose:
+      "WEAI's workforce platform: enterprises bring problems, roles and budgets; " +
+      "people, teams and AI capability bring verifiable supply. The platform connects " +
+      "demand clarification, proactive matching, advisory work, hiring, project " +
+      "delivery and continuing capability development.",
+    intendedUser: "Enterprise, HR and department leads on the demand side; people, teams and AI operators on the supply side.",
+    worksNow: [],
+  },
 
   // Platforms
   {
