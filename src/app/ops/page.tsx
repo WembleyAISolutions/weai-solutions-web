@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Ops — WEAI.solutions",
   description:
     "How work is organised and completed: CoStudio, DomainOps, OpsBoard and MailOps — " +
-    "the four signal-source projects every WEAI operation runs on.",
+    "the four signal-source projects WEAI is building for its operations.",
 };
 
 export default function OpsPage() {

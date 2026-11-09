@@ -40,8 +40,8 @@ export const PRODUCTS: readonly Product[] = [
     name: "CoStudio",
     line: "ops",
     purpose:
-      "The platform layer of Ops: a router and connector between agents and between " +
-      "models, so a piece of work survives the switch from one to the next.",
+      "The platform layer of Ops: designed as a router and connector between agents " +
+      "and between models, so a piece of work survives the switch from one to the next.",
     intendedUser: "Teams running more than one agent, or one agent across more than one model.",
     problem:
       "Agents from the same vendor cannot talk to each other. Switching models loses " +
@@ -55,7 +55,8 @@ export const PRODUCTS: readonly Product[] = [
     line: "ops",
     purpose:
       "The identity layer an agent needs before it goes live — domain, mailbox, DNS, " +
-      "certificates — chosen, bought, configured and migrated in one place.",
+      "certificates — designed so they can be chosen, bought, configured and migrated " +
+      "in one place.",
     intendedUser: "Anyone putting an agent, a product or a company online.",
     problem:
       "Hundreds of suffixes; the obvious name is taken or priced for speculation; " +
@@ -69,8 +70,8 @@ export const PRODUCTS: readonly Product[] = [
     name: "OpsBoard",
     line: "ops",
     purpose:
-      "The supervision board: many owners, many agents and many projects on one " +
-      "surface, with the human decision points on record.",
+      "The supervision board: designed to put many owners, many agents and many " +
+      "projects on one surface, with the human decision points on record.",
     intendedUser: "Owners and operators who need to see everything in flight without opening every tool.",
     problem:
       "Work spread across agents and projects has no single place where a person can " +
@@ -83,8 +84,8 @@ export const PRODUCTS: readonly Product[] = [
     name: "MailOps",
     line: "ops",
     purpose:
-      "The smallest unit of signal: one mailbox per agent, pulling from many sources " +
-      "and handing on a structured signal with its origin attached.",
+      "The smallest unit of signal: designed as one mailbox per agent, pulling from " +
+      "many sources and handing on a structured signal with its origin attached.",
     intendedUser: "Any agent that has to read and act on email.",
     problem:
       "Email is still where most work arrives, and it arrives unstructured. An agent " +
